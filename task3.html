@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free Ebook Form</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+</head>
+<body>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: white;
+}
+
+section {
+    width: 100vw;
+    height: 100vh;
+    background: #F4A261;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 450px 450px 0 0;
+    border-color: white transparent transparent transparent;
+}
+
+.container {
+    display: flex;
+    width: 800px;
+    max-width: 90%;
+    padding: 30px;
+    color: white;
+    z-index: 2;
+}
+
+.form-box {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    width: 100%;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    color: black;
+    position: relative;
+    bottom: 50px;
+    left: -250px;
+}
+.form-box h2 {
+    text-align: center;
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.form-box input {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    border: 1px solid #ddd;
+    border-radius: 25px;
+    outline: none;
+    font-size: 14px;
+    background-color: #f5f5f5;
+    padding-left: 15px;
+}
+
+.form-box button {
+    width: 100%;
+    padding: 10px;
+    background-color: #f4a261;
+    border: none;
+    color: white;
+    font-size: 14px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: 600;
+    margin-top: 8px;
+}
+
+.form-box button:hover {
+    background-color: #e68a4f;
+}
+
+.contact-box {
+    padding: 30px;
+    width: 48%;
+    position: relative;
+    left: -220px;
+    bottom: 50px;
+}
+
+.contact-box h3 {
+    color: black;
+    font-size: 26px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.contact-box p {
+    margin: 5px 0;
+    font-size: 14px;
+}
+
+.contact-box i {
+    margin-right: 8px;
+    font-size: 16px;
+}
+
+.social-icons {
+    display: flex;
+    gap: 10px;
+    margin-top: 8px;
+}
+
+.social-icons i {
+    font-size: 22px;
+    cursor: pointer;
+    transition: 0.3s;
+    background-color: #e9c46a;
+    border-radius: 50%;
+    padding: 15px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+}
+
+.social-icons i:hover {
+    background-color: #e68a4f;
+}
+
+.copyright {
+    margin-top: 20px;
+    font-size: 12px;
+    color: white;
+}
+</style>
+    <section>
+        <div class="container">
+            <div class="form-box">
+                <h2>Get your free <br> <span class="bold-text">ebook</span></h2>
+                <input type="text" placeholder="Your Name">
+                <input type="email" placeholder="your@company.com">
+                <button>Download ebook</button>
+            </div>
+            <div class="contact-box">
+                <p class="text" style="color: #e9c46a; font-size: 22px;">Say hi and talk to us</p>
+                <h3 style="font-size: 30px;">Contact</h3>
+                <p ><i class="fa-solid fa-location-dot"></i> London, United Kingdom</p>
+                <p>010-020-0340</p>
+                <p> info@company.com</p>
+                <p class="social-title">Social</p>
+                <div class="social-icons">
+                    <i class="fa-brands fa-instagram"></i>
+                    <i class="fa-brands fa-twitter"></i>
+                    <i class="fa-brands fa-facebook"></i>
+                    <i class="fa-brands fa-whatsapp"></i>
+                </div>
+                <p class="copyright">Copyright © 2048 ebook company</p>
+                <p class="designed-by" style="color: red;">designed by templatemo</p>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Builder</title>
+    <link rel="stylesheet" href="builder.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+<style>
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", sans-serif;
+    background: #fff;
+}
+
+/* Top Menu */
+.top-menu {
+    display: flex;
+    justify-content: space-between;
+    padding: 2px 50px;
+    background: white;
+    border: 1px solid #eee;
+    align-items: center;
+}
+
+.top_menu .dn_btn {
+    line-height: 28px;
+    border: 1px solid #fab700;
+    display: inline-block;
+    background: #fab700;
+    padding: 0px 19px;
+    font-size: 12px;
+    font-family: "Roboto", sans-serif;
+    font-weight: 500;
+    color: #fff;
+    -webkit-transition: all 300ms linear 0s;
+    -o-transition: all 300ms linear 0s;
+    transition: all 300ms linear 0s;
+    margin-top: 8px;
+    border-radius: 3px;
+  }
+  .top_menu .dn_btn:hover {
+    background: transparent;
+    color: #222222;
+    border-color: #fab700;
+  } 
+.social-links a {
+    text-decoration: none;
+ color: #ccc;
+font-size: 12px;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+.right-menu {
+    display: flex;
+    align-items: center;
+}
+
+.language {
+    padding: 5px;
+    margin-right: 10px;
+}
+
+.quote-btn {
+    padding: 8px 15px;
+    background: #ffcc00;
+    text-decoration: none;
+    color: #000;
+    border-radius: 5px;
+     line-height: 28px;
+    border: 1px solid #fab700;
+    display: inline-block;
+    background: #fab700;
+    padding: 0px 19px;
+    font-size: 12px;
+    font-family: "Roboto", sans-serif;
+    font-weight: 500;
+    color: #fff;
+    -webkit-transition: all 300ms linear 0s;
+    -o-transition: all 300ms linear 0s;
+    transition: all 300ms linear 0s;
+    margin-top: 8px;
+    border-radius: 3px;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 50px;
+    background: white;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    text-decoration: none;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    padding: 0;
+    margin: 0;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav-links li {
+    margin: 0 15px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #333;
+    font-size: 16px;
+}
+
+.nav-links .active {
+    color: #ffcc00;
+}
+
+/* Hero Section */
+.hero {
+    background: url('https://img.freepik.com/premium-photo/lightning-flashes-buildings_863013-99656.jpg') no-repeat center center/cover;
+width: 100%;
+min-height: 700px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+}
+
+.hero-content {
+    max-width: 600px;
+}
+
+.hero-content h1 {
+    font-size: 40px;
+    margin: 0;
+}
+
+.hero-content span {
+    background: yellow;
+    padding: 5px;
+    color: black;
+}
+
+.hero-btn {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 20px;
+    background: #ffcc00;
+    text-decoration: none;
+    color: #000;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+/* Services Section */
+.services {
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.services-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.service-item {
+    max-width: 250px;
+    text-align: center;
+}
+
+.service-item img {
+    width: 60px;
+}
+
+.service-item h4 {
+    margin: 10px 0;
+}
+
+.service-item p {
+    font-size: 14px;
+    color: gray;
+}</style>
+    <!-- Header -->
+    <header class="header">
+        <div class="top-menu">
+            <div class="social-links">
+                <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                <a href="#"><i class="fa-solid fa-basketball"></i></a>
+                <a href="#"><i class="fa-brands fa-behance"></i></a>
+            </div>
+            <div class="right-menu">
+                <select class="language">
+                    <option>English</option>
+                    <option>Bangla</option>
+                    <option>Indian</option>
+                    <option>Aus</option>
+                </select>
+                <a href="#" class="quote-btn">Free Quote!</a>
+            </div>
+        </div>
+
+        <nav class="navbar">
+            <a href="index.html" class="logo"><img src="logo.png" alt=""></a>
+            <ul class="nav-links">
+                <li><a href="#" class="active">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Pages</a></li>
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">Contact</a></li>
+                <div class="search_icon">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </div>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Build Your <span>Dream</span></h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <a href="#" class="hero-btn">Discover Now</a>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services">
+        <h2>Our Offered Services</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        <div class="services-container">
+            <div class="service-item">
+                <img src="service-icon-1.png">
+                <h4>Building Drawings</h4>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere, rerum unde fugiat .</p>
+            </div>
+            <div class="service-item">
+                <img src="service-icon-2.png" alt="Painting Constructions">
+                <h4>Painting Constructions</h4>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            </div>
+            <div class="service-item">
+                <img src="service-icon-3.png" alt="Repairing Constructions">
+                <h4>Repairing Constructions</h4>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            </div>
+        </div>
+    </section>
+
+</body>
+</html>

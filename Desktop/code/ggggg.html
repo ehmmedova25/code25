@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Markalar</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #ffffff;
+        }
+        
+        .full-width-bg {
+            width: 100%;
+            background-color: #f0f0f0;
+            padding: 12px 0;
+            margin: 8px 0;
+        }
+        
+        .content-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 40px;
+            position: relative;
+        }
+        
+        .section-title {
+            font-size: 20px;
+            margin: 8px 0 15px 0;
+            color: #333;
+            font-weight: 600;
+        }
+        
+        .brands-carousel {
+            position: relative;
+            overflow: hidden;
+            width: 100%;
+        }
+        
+        .brands-container {
+            display: flex;
+            transition: transform 0.6s ease;
+            width: 100%;
+        }
+        
+        .brand-page {
+            display: flex;
+            min-width: 100%;
+            width: 100%;
+            padding: 5px 0;
+            justify-content: space-between;
+            flex-shrink: 0;
+            flex-wrap: wrap;
+        }
+        
+        .brand-item {
+            width: calc(14.2857% - 10px);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            cursor: pointer;
+            flex-shrink: 0;
+            transition: transform 0.3s ease;
+            margin-bottom: 15px;
+        }
+        
+        .brand-logo {
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            background-color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: all 0.4s ease;
+            border: 2px solid #e0e0e0;
+        }
+        
+        .brand-logo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+        
+        .brand-item:hover .brand-logo {
+            transform: scale(1.05);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+            border-color: #5d3ebc;
+        }
+        
+        .brand-item:hover .brand-logo img {
+            transform: scale(1.1);
+        }
+        
+        .nav-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 42px;
+            height: 42px;
+            background-color: rgba(255, 255, 255, 0.95);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+            z-index: 20;
+            border: none;
+            font-size: 20px;
+            color: #555;
+            transition: all 0.3s;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+        }
+        
+        .nav-arrow:hover {
+            background-color: white;
+            color: #5d3ebc;
+            transform: translateY(-50%) scale(1.1);
+        }
+        
+        .arrow-left {
+            left: 0px;
+        }
+        
+        .arrow-right {
+            right: 0px;
+        }
+        
+        .page-indicators {
+            display: flex;
+            justify-content: center;
+            margin-top: 12px;
+            gap: 8px;
+        }
+        
+        .page-indicator {
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+            background-color: #ccc;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .page-indicator.active {
+            background-color: #555;
+            transform: scale(1.3);
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 1200px) {
+            .brand-item {
+                width: calc(20% - 10px);
+            }
+            
+            .brand-logo {
+                width: 140px;
+                height: 140px;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .content-container {
+                padding: 0 30px;
+            }
+            
+            .brand-item {
+                width: calc(25% - 10px);
+            }
+            
+            .brand-logo {
+                width: 120px;
+                height: 120px;
+            }
+            
+            .nav-arrow {
+                width: 36px;
+                height: 36px;
+                font-size: 18px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .content-container {
+                padding: 0 20px;
+            }
+            
+            .brand-item {
+                width: calc(33.333% - 10px);
+            }
+            
+            .brand-logo {
+                width: 100px;
+                height: 100px;
+            }
+            
+            .section-title {
+                font-size: 18px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .content-container {
+                padding: 0 15px;
+            }
+            
+            .brand-item {
+                width: calc(50% - 10px);
+            }
+            
+            .brand-logo {
+                width: 80px;
+                height: 80px;
+            }
+            
+            .nav-arrow {
+                width: 30px;
+                height: 30px;
+                font-size: 16px;
+            }
+            
+            .page-indicators {
+                margin-top: 8px;
+            }
+        }
+
+        @media (max-width: 400px) {
+            .brand-item {
+                width: calc(100% - 10px);
+            }
+            
+            .brand-logo {
+                width: 100px;
+                height: 100px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="full-width-bg">
+        <div class="content-container">
+            <section class="brands-section">
+                <h2 class="section-title">Markalar</h2>
+                <div class="brands-carousel">
+                    <button class="nav-arrow arrow-left"><i class="fas fa-chevron-left"></i></button>
+                    
+                    <div class="brands-container">
+                        <!-- 1. Sayfa -->
+                        <div class="brand-page">
+                            <div class="brand-item">
+                                <div class="brand-logo">
+                                    <img src="https://n11scdn.akamaized.net/a1/org/24/10/22/65/95/73/50/14/02/22/06/34/38115575922986339810.jpg" alt="Defacto">
+                                </div>
+                            </div>
+                            <div class="brand-item">
+                                <div class="brand-logo">
+                                    <img src="https://n11scdn.akamaized.net/a1/org/24/10/22/78/39/68/18/01/04/77/42/67/27454315749700290735.jpg" alt="maVi">
+                                </div>
+                            </div>
+                            <div class="brand-item">
+                                <div class="brand-logo">
+                                    <img src="https://n11scdn.akamaized.net/a1/org/24/10/22/80/24/48/34/12/27/12/07/69/16354339138800009615.jpg" alt="U.S. POLO ASSN.">
+                                </div>
+                            </div>
+                            <div class="brand-item">
+                                <div class="brand-logo">
+                                    <img src="https://n11scdn.akamaized.net/a1/org/24/09/30/66/58/77/53/99/20/75/84/75/21763789500440658726.jpg" alt="9902 1890">
+                                </div>
+                            </div>
+                            <div class="brand-item">
+                                <div class="brand-logo">
+                                    <img src="https://n11scdn.akamaized.net/a1/org/23/05/25/79/96/04/45/54/96/77/67/62/76826852885052898073.png" alt="MADAME COCO">
+                                </div>
+                            </div>
+                            <div class="brand-item">
+                                <div class="brand-logo">
+                                    <img src="https://n11scdn.akamaized.net/a1/org/21/05/03/68/15/84/06/15/62/86/26/23/32633710669061273057.jpg" alt="FLO">
+                                </div>
+                            </div>
+                            <div class="brand-item">
+                                <div class="brand-logo">
+                                    <img src="https://n11scdn.akamaized.net/a1/org/23/06/23/85/90/69/56/80/11/45/05/08/65716302984392428504.jpg" alt="L'OREAL">
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- 2. Sayfa -->
+                        <div class="brand-page">
+                            <div class="brand-item">
+                                <div class="brand-logo">
+                                    <img src="https://n11scdn.akamaized.net/a1/org/23/06/23/71/55/35/22/41/66/82/57/36/24696874136023614666.jpg" alt="mixaracar Home">
+                                </div>
+                            </div>
+                            <div class="brand-item">
+                                <div class="brand-logo">
+                                    <img src="https://n11scdn.akamaized.net/a1/org/23/06/23/46/20/97/35/35/35/13/08/81/21889471371095291101.jpg" alt="Nike">
+                                </div>
+                            </div>
+                            <div class="brand-item">
+                                <div class="brand-logo">
+                                    <img src="https://n11scdn.akamaized.net/a1/org/23/09/12/59/47/30/69/48/01/77/36/49/83542302905443858949.png" alt="Adidas">
+                                </div>
+                            </div>
+                            <div class="brand-item">
+                                <div class="brand-logo">
+                                    <img src="https://n11scdn.akamaized.net/a1/org/24/03/27/78/24/76/45/72/23/51/24/22/11327507068227175243.png" alt="Puma">
+                                </div>
+                            </div>
+                            <div class="brand-item">
+                                <div class="brand-logo">
+                                    <img src="https://n11scdn.akamaized.net/a1/org/23/06/23/78/84/73/83/93/92/19/40/95/8172913635334403075.jpg" alt="Zara">
+                                </div>
+                            </div>
+                            <div class="brand-item">
+                                <div class="brand-logo">
+                                    <img src="https://n11scdn.akamaized.net/a1/org/23/06/23/60/58/37/02/34/95/23/12/45/25654569499314634919.jpg" alt="Mango">
+                                </div>
+                            </div>
+                            <div class="brand-item">
+                                <div class="brand-logo">
+                                    <img src="https://n11scdn.akamaized.net/a1/org/23/06/23/78/18/65/36/85/21/00/14/69/17188971000821824450.jpg" alt="H&M">
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- 3. Sayfa -->
+                        <div class="brand-page">
+                            <div class="brand-item">
+                                <div class="brand-logo">
+                                    <img src="https://n11scdn.akamaized.net/a1/org/23/06/23/65/53/46/23/13/10/38/75/41/57423322566715227448.jpg" alt="LC Waikiki">
+                                </div>
+                            </div>
+                            <div class="brand-item">
+                                <div class="brand-logo">
+                                    <img src="https://n11scdn.akamaized.net/a1/org/23/06/23/91/13/63/82/06/44/30/14/21/14499904648337706953.jpg" alt="Bershka">
+                                </div>
+                            </div>
+                            <div class="brand-item">
+                                <div class="brand-logo">
+                                    <img src="https://n11scdn.akamaized.net/a1/org/23/06/23/91/13/63/82/06/44/30/14/21/14499904648337706953.jpg" alt="Pull&Bear">
+                                </div>
+                            </div>
+                            <div class="brand-item">
+                                <div class="brand-logo">
+                                    <img src="https://n11scdn.akamaized.net/a1/org/23/06/23/78/18/65/36/85/21/00/14/69/17188971000821824450.jpg" alt="Stradivarius">
+                                </div>
+                            </div>
+                            <div class="brand-item">
+                                <div class="brand-logo">
+                                    <img src="https://n11scdn.akamaized.net/a1/org/23/09/12/59/47/30/69/48/01/77/36/49/83542302905443858949.png" alt="Koton">
+                                </div>
+                            </div>
+                            <div class="brand-item">
+                                <div class="brand-logo">
+                                    <img src="https://n11scdn.akamaized.net/a1/org/23/09/12/59/47/30/69/48/01/77/36/49/83542302905443858949.png" alt="Mavi">
+                                </div>
+                            </div>
+                            <div class="brand-item">
+                                <div class="brand-logo">
+                                    <img src="https://n11scdn.akamaized.net/a1/org/24/09/30/66/58/77/53/99/20/75/84/75/21763789500440658726.jpg" alt="Colins">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <button class="nav-arrow arrow-right"><i class="fas fa-chevron-right"></i></button>
+                </div>
+                
+                <div class="page-indicators">
+                    <div class="page-indicator active" data-page="0"></div>
+                    <div class="page-indicator" data-page="1"></div>
+                    <div class="page-indicator" data-page="2"></div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const container = document.querySelector('.brands-container');
+            const pageIndicators = document.querySelectorAll('.page-indicator');
+            const totalPages = document.querySelectorAll('.brand-page').length;
+            let currentPage = 0;
+            
+            const updateCarousel = () => {
+                container.style.transform = `translateX(-${currentPage * 100}%)`;
+                
+                pageIndicators.forEach((indicator, index) => {
+                    indicator.classList.toggle('active', index === currentPage);
+                });
+            };
+            
+            function nextPage() {
+                currentPage = (currentPage + 1) % totalPages;
+                updateCarousel();
+            }
+            
+            function prevPage() {
+                currentPage = (currentPage - 1 + totalPages) % totalPages;
+                updateCarousel();
+            }
+            
+            document.querySelector('.arrow-left').addEventListener('click', prevPage);
+            document.querySelector('.arrow-right').addEventListener('click', nextPage);
+            
+            pageIndicators.forEach(indicator => {
+                indicator.addEventListener('click', function() {
+                    currentPage = parseInt(this.getAttribute('data-page'));
+                    updateCarousel();
+                });
+            });
+
+            // Touch events for mobile swipe
+            let touchStartX = 0;
+            let touchEndX = 0;
+            
+            container.addEventListener('touchstart', function(e) {
+                touchStartX = e.changedTouches[0].screenX;
+            }, false);
+            
+            container.addEventListener('touchend', function(e) {
+                touchEndX = e.changedTouches[0].screenX;
+                handleSwipe();
+            }, false);
+            
+            function handleSwipe() {
+                const threshold = 50; // Minimum swipe distance
+                if (touchEndX < touchStartX - threshold) {
+                    nextPage(); // Swipe left
+                } else if (touchEndX > touchStartX + threshold) {
+                    prevPage(); // Swipe right
+                }
+            }
+        });
+    </script>
+</body>
+</html>

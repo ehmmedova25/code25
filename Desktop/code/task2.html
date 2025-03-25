@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .footer-main-title h3 {
+            font-size: 16px;
+            margin-bottom: 10px;
+            font-weight: 600;
+            color: #505050;
+        }
+
+        .footer-main-title p {
+            margin-top: 4px;
+            margin-bottom: 15px;
+            font-size: 13px;
+            line-height: 1.54;
+            letter-spacing: -0.05px;
+            color: #707070;
+        }
+
+        .footer-main-title a {
+            text-transform: capitalize;
+            font-size: 13px;
+            font-weight: 600;
+            color: #707070;
+        }
+
+        .footer-main-icons {
+            display: flex;
+            border-bottom: 1px solid #ededed;
+            border-top: 1px solid #ededed;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+            margin: 0 0 40px;
+            width: 100%;
+            padding: 24px 0;
+            margin-top: 20px;
+        }
+
+        .footer-main-icons-item {
+            gap: 15px;
+            display: flex;
+            align-items: center;
+            width: 25%;
+        }
+
+        @media screen and (max-width: 1180px) {
+            .footer-main-icons-item {
+                width: 45%;
+                margin-bottom: 20px;
+            }
+        }
+
+        @media screen and (max-width: 661px) {
+            .footer-main-icons-item {
+                width: 90%;
+                margin-bottom: 20px;
+            }
+        }
+
+        .footer-main-icons-item-img {
+            justify-content: center;
+            align-items: center;
+            border: 2px solid #5d3ebc;
+            width: 64px;
+            height: 64px;
+            display: flex;
+            border-radius: 50%;
+        }
+
+        .footer-main-icons-item img {
+            width: 32px;
+            height: 32px;
+        }
+
+        .footer-main-icons-item p {
+            color: #1f1f1f;
+            font-size: 16px;
+            font-weight: 600;
+            width: 52%;
+        }
+
+        .footer-main-links {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .footer-main-links-magaza {
+            background-color: #fff;
+            border: 3px solid #ededed;
+            border-radius: 8px;
+            border-width: 4px;
+            margin: unset;
+            padding: 25px;
+            width: 280px;
+        }
+
+        @media screen and (max-width: 601px) {
+            .footer-main-links-magaza {
+                width: 100%;
+                text-align: center;
+            }
+        }
+
+        .footer-main-links-magaza-icons span {
+            display: flex;
+            gap: 20px;
+        }
+
+        .footer-main-links-magaza-icons span img {
+            height: 24px;
+            width: 24px;
+        }
+
+        .footer-main-links-magaza-icons span p {
+            color: #000;
+            font-size: 13px;
+            line-height: 2;
+            margin-bottom: 8px;
+        }
+
+        .footer-main-links-magaza h2 {
+            margin-bottom: 20px;
+            color: #1f1f1f;
+            font-size: 20px;
+            font-weight: 600;
+            height: 26px;
+            line-height: 1.3;
+        }
+
+
+        .footer-main-links-magaza a {
+            border-radius: 6px;
+            display: flex;
+            font-weight: 700;
+            justify-content: center;
+            border: 1px solid #e0e0e0;
+            color: #5d3ebc;
+            font-size: 14px;
+            padding: 10px 20px;
+            margin-bottom: 10px;
+            text-decoration: none;
+        }
+
+        .footer-main-links-magaza .second {
+            background-color: #5d3ebc;
+            color: #fff;
+        }
+
+        .footer-main-links-item {
+            width: 18%;
+        }
+
+        @media screen and (max-width: 991px) {
+            .footer-main-links-item {
+                width: 30%;
+            }
+        }
+
+        @media screen and (max-width: 601px) {
+            .footer-main-links-item {
+                width: 50%;
+                margin-bottom: 20px;
+            }
+        }
+
+        .footer-main-links-item h3 {
+            color: #1f1f1f;
+            font-size: 14px;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        .footer-main-links-item h5 {
+            color: #1f1f1f;
+            font-size: 13px;
+            margin-bottom: 10px;
+        }
+
+        @media screen and (max-width: 601px) {
+            .footer-main-links-item-last {
+                width: 90% !important;
+            }
+        }
+
+        .footer-main-contact {
+            align-items: end;
+            border-top: 1px solid #ededed;
+            display: flex;
+            justify-content: space-between;
+            padding-bottom: 25px;
+            padding-top: 30px;
+            flex-wrap: wrap;
+        }
+
+        .footer-main-contact-items {
+            display: flex;
+            align-items: end;
+            width: 61%;
+            gap: 15px;
+        }
+
+        @media screen and (max-width: 991px) {
+            .footer-main-contact-items {
+                width: 100%;
+                align-items: center;
+                flex-direction: column;
+                text-align: center;
+                gap: 30px;
+                margin-top: 30px;
+            }
+        }
+
+        .footer-main-contact-item1 {
+            width: 35%;
+        }
+
+        @media screen and (max-width: 991px) {
+            .footer-main-contact-item1 {
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+
+        .footer-main-contact-item1 p {
+            font-size: 16px;
+            font-weight: 700;
+            line-height: 1.25;
+            margin: 0 0 18px;
+            text-align: start;
+        }
+
+        .footer-main-contact-item1-box img {
+            width: 106px;
+            height: 32px;
+        }
+
+        .footer-main-contact-item2 p {
+            font-size: 16px;
+            letter-spacing: -0.05px;
+            line-height: 1.25;
+            font-weight: 700;
+            margin: 0 0 18px;
+        }
+
+        .footer-main-contact-item2-iconBox {
+            display: flex;
+            gap: 30px;
+        }
+
+        .footer-main-contact-item2-iconBox img {
+            width: 40px;
+            height: 40px;
+        }
+
+        .footer-main-contact-item3 {
+            margin-left: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .footer-main-contact-item3 p {
+            font-size: 16px;
+            letter-spacing: -0.05px;
+            line-height: 1.25;
+            font-weight: 700;
+            margin: 0 0 18px;
+        }
+
+        .footer-main-contact-item4 img {
+            width: 120px;
+        }
+
+        .footer-main-contact-item4 .trgo {
+            width: 70px;
+            height: 70px;
+        }
+
+        .footer-main-description {
+            border-top: 1px solid #ececec;
+            padding: 24px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer-main-description-title p {
+            color: #707070;
+            font-size: 12px;
+            line-height: 1.58;
+        }
+
+        .footer-main-description-title h4 {
+            color: #1f1f1f;
+            font-size: 12px;
+            line-height: 2;
+            opacity: 0.7;
+        }
+
+        .footer-main-description-icons img {
+            width: 48px;
+            height: 27px;
+        }
+        
+        /* New custom container class */
+        .n11-container {
+            width: 100%;
+            padding-right: 15px;
+            padding-left: 15px;
+            margin-right: auto;
+            margin-left: auto;
+        }
+        
+        @media (min-width: 576px) {
+            .n11-container {
+                max-width: 540px;
+            }
+        }
+        
+        @media (min-width: 768px) {
+            .n11-container {
+                max-width: 720px;
+            }
+        }
+        
+        @media (min-width: 992px) {
+            .n11-container {
+                max-width: 960px;
+            }
+        }
+        
+        @media (min-width: 1200px) {
+            .n11-container {
+                max-width: 1140px;
+            }
+        }
+        
+        @media (min-width: 1400px) {
+            .n11-container {
+                max-width: 1320px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <footer class="footer">
+        <div class="n11-container">
+            <div class="footer-main">
+                <div class="footer-main-title text-center">
+                    <h3>Online Alişverişin Adresi n11</h3>
+                    <p><strong>n11;</strong> Türkiyedeki başarili <strong>online alişveriş siteleri</strong> arasinda
+                        yer almaktadir. Yaşamin her alanindaki ihtiyaçlarinizi kolayca bulabileceğin n11'de 50.000-i
+                        aşkin mağazanin ürünü bulunmaktadir. <strong>İnternet alişveriş sitesi </strong> ve
+                        <strong>e-ticaret</strong> denildiğinde akla gelen ilk markalardan biri olmayi başaran n11'de
+                        onlarca farkli kategoride binlerce ürün beğeninine sunulmaktadir. Kullanicilarina güven ve
+                        kolaylik, mağazalara ise destek ve özen üzerine dayali değer önerileri sunan n11'de sen de
+                        avantajlarla dolu <strong>internet </strong> alişverişi keyfi sürebilirsin.
+                    </p>
+                    <a href="#">Devamini goster</a>
+                </div>
+                <div class="footer-main-icons">
+                    <div class="footer-main-icons-item">
+                        <div class="footer-main-icons-item-img">
+                            <img src="/n11.task/footer-icon1.svg" alt="">
+                        </div>
+                        <p>Her Alişverişte Kupon Firsatlari</p>
+                    </div>
+                    <div class="footer-main-icons-item">
+                        <div class="footer-main-icons-item-img">
+                            <img src="/n11.task/footer-icon2.svg" alt="">
+                        </div>
+                        <p>Hergün Yeni Ürünler ve Firsatlar
+                        </p>
+                    </div>
+                    <div class="footer-main-icons-item">
+                        <div class="footer-main-icons-item-img">
+                            <img src="n11.task/footer-icon3.svg" alt="">
+                        </div>
+                        <p>Herkese Uygun Ödeme Yöntemleri
+                        </p>
+                    </div>
+                    <div class="footer-main-icons-item">
+                        <div class="footer-main-icons-item-img">
+                            <img src="/n11.task/footer-icon4.svg" alt="">
+                        </div>
+                        <p>Kolay Değişim ve İade
+                        </p>
+                    </div>
+                </div>
+
+                <div class="footer-main-links">
+                    <div class="footer-main-links-item">
+                        <h3>n11.com</h3>
+                        <h5>Markalar</h5>
+                        <h5>İletişim</h5>
+                        <h5>Marka Koruma Merkezi</h5>
+                    </div>
+
+                    <div class="footer-main-links-item">
+                        <h3>Müşteriler</h3>
+                        <h5>Üye Ol</h5>
+                        <h5>Yeni Üye Rehberi</h5>
+                        <h5>Yardim</h5>
+                        <h5>Ödeme Seçenekleri</h5>
+                        <h5>İptal & İade</h5>
+                        <h5>İşlem Rehberi</h5>
+                        <h5>Kullanici Güvenliği</h5>
+                        <h5>Site Haritasi</h5>
+                        <h5>Kupon Kullanim Rehberi</h5>
+                        <h5>Ürün Rozetleri Rehberi</h5>
+                        <h5>n11 Influencer Programi</h5>
+                    </div>
+
+                    <div class="footer-main-links-item">
+                        <h3>Popüler Sayfalar</h3>
+                        <h5>Altin</h5>
+                        <h5>Cep Telefonu</h5>
+                        <h5>Kurutma Makinesi</h5>
+                        <h5>Airfryer/Fritöz</h5>
+                        <h5>Bluetooth Kulaklik</h5>
+                        <h5>Apple Watch</h5>
+                        <h5>Playstation 5</h5>
+                        <h5>Airpods Kulaklik</h5>
+                        <h5>Akilli Saat</h5>
+                        <h5>iPhone 14</h5>
+                        <h5>Robot Süpürge</h5>
+                    </div>
+                    <div class="footer-main-links-item">
+                        <h3>Öne Çikan Sayfalar</h3>
+                        <h5>iPhone 15</h5>
+                        <h5>Ramazan Süsleri</h5>
+                        <h5>Kahve Makinesi</h5>
+                        <h5>Ödeme Seçenekleri</h5>
+                        <h5>Dyson Hava Temizleyici</h5>
+                        <h5>Ramazan Kampanyasi</h5>
+                        <h5>Avize</h5>
+                        <h5>Apple Watch 9</h5>
+                        <h5>Laptop</h5>
+                        <h5>iPhone 16</h5>
+                        <h5>Su Aritma Cihazi</h5>
+                        <h5>Isitici</h5>
+                    </div>
+
+                    <div class="footer-main-links-item footer-main-links-item-last">
+                        <div class="footer-main-links-magaza">
+                            <h2>Mağazalar için </h2>
+                            <a href="#">Mağaza Girişi</a>
+                            <a href="#" class="second">Ücretsiz Mağaza Aç</a>
+                            <div class="footer-main-links-magaza-icons">
+                                <span>
+                                    <p>Yeni Mağaza Rehberi</p>
+                                </span>
+                                <span>
+                                    <p>Mağaza Puani Hesaplamasi</p>
+                                </span>
+                                <span>
+                                    <p>Mağaza Yardim Merkezi</p>
+                                </span>
+                                <span>
+                                    <p>Kargo Rehberi</p>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-main-contact">
+                    <div class="footer-main-contact-item1">
+                        <p>n11 uygulamasini ücretsiz indir mobile özel avantajlardan yararlan!</p>
+                        <div class="footer-main-contact-item1-box">
+                            <img src="/n11.task/n11.icon1.svg" alt="">
+                            <img src="/n11.task/n11.icon2.svg" alt="">
+                            <img src="/n11.task/n11.icon3.svg" alt="">
+                        </div>
+                    </div>
+                    <div class="footer-main-contact-items">
+                        <div class="footer-main-contact-item2">
+                            <p>Bizi Takip Edin</p>
+                            <div class="footer-main-contact-item2-iconBox">
+                                <img src="/n11.task/faceb.svg" alt="">
+                                <img src="/n11.task/twitter.svg" alt="">
+                                <img src="image/instagram.svg" alt="">
+                                <img src="image/youtebe.svg" alt="">
+                                <img src="image/pinterest.svg" alt="">
+                            </div>
+                        </div>
+
+                        <div class="footer-main-contact-item3">
+                            <p>Bizi Takip Edin</p>
+                            <img src="/assets/img/footer-contact-blog11.svg" alt="">
+                        </div>
+                        <div class="footer-main-contact-item4">
+                            <img src="/image/qrcode.jpg" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-main-description">
+                    <div class="footer-main-description-title">
+                        <p>©️ Telif Hakki 2012-2025 n11.com</p>
+                        <h4>Gizlilik ve Kişisel Verilerin Korunmasi Politikasi | Kullanim Koşullarimiz | Çerez Ayarlari
+                        </h4>
+                    </div>
+                    <div class="footer-main-description-icons">
+                        <img src="/image/card.png" alt="">
+                        <img src="/image/visa.png" alt="">
+                        <img src="/image/amex.png" alt="">
+                        <img src="/image/american-express.png" alt="">
+                        <img src="image/credit-cards.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

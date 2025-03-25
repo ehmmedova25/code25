@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Review Cards</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+<style>
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+.reviews {
+    padding: 50px 20px;
+    background-color: white;
+}
+
+.section-title {
+    color: #d4a017;
+    font-size: 18px;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.main-title {
+    font-size: 28px;
+    margin-bottom: 30px;
+}
+
+.reviews-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    height: 100vh;
+}
+
+.review-card {
+    width: 300px;
+    height: 350px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 12px;
+    position: relative;
+    color: white;
+    padding: 20px;
+    text-align: left;
+    background-color: black;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.review-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.45);
+    border-radius: 12px;
+    z-index: 0;
+}
+
+.review-card .profile-box {
+    position: absolute;
+    top: 0px;
+    width: 35%;
+    left: 30%;
+    background: rgba(232, 93, 60, 0.85);
+    padding: 10px;
+    text-align: center;
+    border-radius: 0 0 10px 10px;
+    z-index: 1;
+}
+
+.review-card .profile-box img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 2px solid white;
+}
+
+.review-card .profile-box h4, .review-card .profile-box p {
+    margin: 8px 0;
+    color: white;
+}
+
+.review-card .rating,
+.review-card .review-text {
+    position: relative;
+    z-index: 1;
+}
+
+.review-card .rating {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.review-card .rating i {
+    color: gold;
+}
+
+.review-card .review-text {
+    font-size: 14px;
+    line-height: 1.5;
+}
+</style>
+    <section class="reviews">
+        <h3 class="section-title">Reviews</h3>
+        <h2 class="main-title">What people saying...</h2>
+
+        <div class="reviews-container">
+            <div class="review-card" style="background-image: url('https://mktplace.org/wp-content/uploads/2024/12/types-of-office-jobs-2.jpg');">
+                <div class="profile-box">
+                    <img src="https://mktplace.org/wp-content/uploads/2024/12/types-of-office-jobs-2.jpg" alt="Sandy">
+                    <h4>Sandy</h4>
+                    <p>Artist</p>
+                </div>
+                <p class="rating"><strong>4.5</strong> 
+                    <i class="fas fa-star"></i> 
+                    <i class="fas fa-star"></i> 
+                    <i class="fas fa-star"></i> 
+                    <i class="fas fa-star"></i> 
+                    <i class="fas fa-star-half-alt"></i>
+                </p>
+                <p class="review-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            </div>
+
+            <div class="review-card" style="background-image: url('https://mktplace.org/wp-content/uploads/2024/12/types-of-office-jobs-2.jpg');">
+                <div class="profile-box">
+                    <img src="https://mktplace.org/wp-content/uploads/2024/12/types-of-office-jobs-2.jpg" alt="John">
+                    <h4>John</h4>
+                    <p>Producer</p>
+                </div>
+                <p class="rating"><strong>3.5</strong> 
+                    <i class="fas fa-star"></i> 
+                    <i class="fas fa-star"></i> 
+                    <i class="fas fa-star"></i> 
+                    <i class="fas fa-star-half-alt"></i> 
+                    <i class="far fa-star"></i>
+                </p>
+                <p class="review-text">If you need some specific CSS templates, you can Google with keywords such as template portfolio, etc.</p>
+            </div>
+
+            <div class="review-card" style="background-image: url('https://mktplace.org/wp-content/uploads/2024/12/types-of-office-jobs-2.jpg');">
+                <div class="profile-box">
+                    <img src="https://mktplace.org/wp-content/uploads/2024/12/types-of-office-jobs-2.jpg"alt="Candy">
+                    <h4>Candy</h4>
+                    <p>VP, Design</p>
+                </div>
+                <p class="rating"><strong>5</strong> 
+                    <i class="fas fa-star"></i> 
+                    <i class="fas fa-star"></i> 
+                    <i class="fas fa-star"></i> 
+                    <i class="fas fa-star"></i> 
+                    <i class="fas fa-star"></i>
+                </p>
+                <p class="review-text">Please tell your friends about our website that we provide 100% free CSS templates for everyone. Thank you!</p>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

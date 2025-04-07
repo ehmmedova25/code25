@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Basket</title>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Open Sans', sans-serif;
+    }
+    body {
+      background-color: #f8f8f8;
+      color: #333;
+      padding: 20px;
+    }
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 40px;
+      background-color: #fff;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .navbar .logo {
+      font-size: 24px;
+      font-weight: 700;
+    }
+    .navbar .logo span {
+      color: red;
+    }
+    .navbar ul {
+      list-style: none;
+      display: flex;
+      gap: 30px;
+    }
+    .navbar ul li a {
+      text-decoration: none;
+      color: #000;
+      font-weight: 600;
+      transition: color 0.3s;
+    }
+    .navbar ul li a:hover {
+      color: hotpink;
+    }
+    .basket-items {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+      gap: 30px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .card {
+      background-color: #fff;
+      padding: 15px;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+    .card-content {
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+    .card img {
+      width: 100%;
+      height: 200px;
+      object-fit: contain;
+      margin-bottom: 15px;
+    }
+    .card h4 {
+      margin: 0 0 10px 0;
+      font-size: 15px;
+      line-height: 1.4;
+      min-height: 42px;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+    .rating-price {
+      margin-top: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .stars {
+color: black;      font-size: 14px;
+      letter-spacing: 2px;
+    }
+    .price {
+      font-weight: 700;
+      font-size: 18px;
+      color: #333;
+    }
+    .buy-btn {
+  margin-top: auto;
+  padding: 8px 16px; 
+  background-color: hotpink;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  font-weight: 600; width: 120px; 
+  cursor: pointer;
+  font-size: 16px; 
+}
+    .buy-btn:hover {
+      background-color: #ff69b4;
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="logo">Male fashion<span>.</span></div>
+    <ul>
+      <li><a href="Home.html">Home</a></li>
+      <li><a href="Basket.html">Basket</a></li>
+      <li><a href="Categories.html">Categories</a></li>
+    </ul>
+  </nav>
+
+  <h2>Your Basket</h2>
+  <div class="basket-items" id="basket-list"></div>
+
+  <script>
+    function loadBasket() {
+      const basket = JSON.parse(localStorage.getItem('basket')) || [];
+      const container = document.getElementById('basket-list');
+
+      if (basket.length === 0) {
+        container.innerHTML = '<p>Your basket is empty.</p>';
+        return;
+      }
+
+      container.innerHTML = '';
+
+      basket.forEach(product => {
+        const card = document.createElement('div');
+        card.className = 'card';
+
+        
+        function shortenTitle(title) {
+          return title.length > 40 ? title.slice(0, 40) + "..." : title;
+        }
+
+        card.innerHTML = `
+          <img src="${product.image}" alt="${product.title}" />
+          <div class="card-content">
+            <h4>${shortenTitle(product.title)}</h4>
+            <div class="rating-price">
+              <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="far fa-star"></i>
+                <i class="far fa-star"></i>
+              </div>
+              <div class="price">$${product.price.toFixed(2)}</div>
+            </div>
+            <button class="buy-btn">Remove</button>
+          </div>
+        `;
+        
+        container.appendChild(card);
+
+        card.querySelector('.buy-btn').addEventListener('click', function() {
+          removeFromBasket(product.id);
+        });
+      });
+    }
+
+    function removeFromBasket(productId) {
+      let basket = JSON.parse(localStorage.getItem('basket')) || [];
+      basket = basket.filter(item => item.id !== productId); 
+      localStorage.setItem('basket', JSON.stringify(basket));
+      loadBasket(); 
+    }
+
+    loadBasket();
+</script>
+
+  
+
+</body>
+</html>

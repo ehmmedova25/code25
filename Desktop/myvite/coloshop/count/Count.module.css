@@ -1,0 +1,88 @@
+.timerSection {
+    background-color: #f3f3f3;
+    padding: 0;
+    margin: 0;
+    overflow-x: hidden;
+    width: 100%;
+    box-sizing: border-box; /* Ensure the padding doesn’t cause overflow */
+}
+
+.timerContainer {
+    display: flex;
+    width: 100%; /* Ensure it doesn't exceed the viewport */
+    margin: 0;
+    padding: 0;
+}
+
+.timerLeft {
+    flex: 1;
+    background-size: cover;
+    background-position: center;
+    min-height: 400px;
+}
+
+.timerRight {
+    flex: 1;
+    background-color: #f3f3f3;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.timerTitle {
+    font-size: 32px;
+    font-weight: bold;
+    color: #1e1e27;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.timerTitle::after {
+    content: '';
+    width: 40px;
+    height: 4px;
+    background-color: #fe4c50;
+    display: block;
+    margin: 10px auto 0;
+}
+
+.timerDisplay {
+    display: flex;
+    gap: 20px;
+    margin: 20px 0;
+    margin-bottom: 40px;
+}
+
+.timeUnit {
+    background-color: white;
+    border-radius: 50%;
+    width: 110px;
+    height: 110px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.timeValue {
+    font-size: 38px;
+    font-weight: bold;
+    color: #fe4c50;
+}
+
+.timeLabel {
+    font-size: 14px;
+    color: #1e1e27;
+}
+
+.timerButton {
+    padding: 12px 28px;
+    background-color: #1e1e27;
+    color: white;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+}

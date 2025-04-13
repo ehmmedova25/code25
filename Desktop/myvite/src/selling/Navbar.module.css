@@ -1,0 +1,48 @@
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    background-color: white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);    
+    font-family: "Muli", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+
+  }
+  
+
+  .wrapper {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .logo {
+    font-size: 38px; 
+    font-weight: 900;
+    font-family: "Poppins", sans-serif;
+
+  }
+  
+  .dot {
+    color: orange;
+  }
+  
+  .navLinks {
+    list-style: none;
+    display: flex;
+    gap: 50px;
+    padding: 5px 20px;
+    font-size: 1rem;
+  }
+  
+  .navLinks li {
+    cursor: pointer;
+    transition: color 0.3s;
+  }
+  
+  .navLinks li:hover {
+    color: orange;
+  }
+  

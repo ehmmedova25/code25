@@ -1,0 +1,163 @@
+.sectionContainer {
+    width: 70%;
+}
+
+.blogSection {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 30px 0;
+}
+
+.sectionHeader {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    align-items: center;
+    padding: 10px 0;
+    margin-bottom: 80px;
+}
+
+.sectionHeader h2 {
+    color: #282828;
+    text-shadow: rgba(0, 0, 0, 0.01) 0 0 1px;
+    font-size: 30px;
+    font-weight: 600;
+    font-family: inherit;
+    line-height: 1.2;
+    position: relative;
+}
+
+.sectionHeader h2::after {
+    display: block;
+    position: absolute;
+    top: calc(100% + 20px);
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 5px;
+    background: #fe4c50;
+    content: '';
+}
+
+.blogGrid {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 50px;
+}
+
+.blogGrid img {
+    width: 33%;
+    height: 250px;
+    object-fit: cover;
+}
+
+.newsletterSection {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #f2f2f2;
+    padding: 30px;
+    flex-wrap: wrap;
+    gap: 20px;
+    width: 100%; 
+    position: relative;
+    z-index: 1;
+}
+
+.newsletterContent {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+.newsletterInfo h3 {
+    margin: 0;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.newsletterInfo p {
+    margin: 5px 0 0;
+    color: #666;
+}
+
+.newsletterForm {
+    display: flex;
+    gap: 10px;
+}
+
+.newsletterForm input {
+    padding: 10px;
+    width: 250px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.newsletterForm button {
+    background-color: #fe4c50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.footerSection {
+    padding: 30px 20px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footerSection .sectionContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.footerTop {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.footerNav {
+    display: flex;
+    gap: 30px;
+}
+
+.footerNav a {
+    font-size: 14px;
+    color: #51545f;
+    line-height: 30px;
+    text-decoration: none;
+}
+
+.footerBottomText {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.footerBottomText a {
+    text-decoration: none;
+    color: red;
+}
+
+.footerSocials {
+    display: flex;
+    gap: 20px;
+}
+
+.footerSocials i {
+    color: #51545f;
+    font: normal normal normal 14px / 1 FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+}

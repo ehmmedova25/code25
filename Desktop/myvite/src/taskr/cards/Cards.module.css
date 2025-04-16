@@ -1,0 +1,106 @@
+.cardWrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 2rem;
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.cardItem {
+  display: flex;
+  flex-direction: column;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background-color: #fff;
+  height: 100%;
+}
+
+.cardItem:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.imageBox {
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  background-color: #f9f9f9;
+  position: relative;
+  overflow: hidden;
+}
+
+.imageBox img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  transition: transform 0.5s ease;
+}
+
+.cardItem:hover .imageBox img {
+  transform: scale(1.05);
+}
+
+.cardInfo {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.cardTitle {
+  font-size: 1rem;
+  font-weight: 500;
+  margin-bottom: 0.75rem;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  color: #333;
+  height: 3rem;
+}
+
+.cardPrice {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #423a3a;
+  margin-top: auto;
+}
+
+.buttonGroup {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5rem;
+  padding: 0.75rem;
+  background-color: #f8f9fa;
+}
+
+.buttonGroup button {
+  padding: 0.5rem;
+  border: none;
+  border-radius: 0.25rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.buttonGroup button:first-child {
+  background-color: #457b9d;
+  color: white;
+}
+
+.buttonGroup button:first-child:hover {
+  background-color: #1d3557;
+}
+
+.buttonGroup button:last-child {
+  background-color: #a8dadc;
+  color: #1d3557;
+}
+
+.buttonGroup button:last-child:hover {
+  background-color: #8ecae6;
+}

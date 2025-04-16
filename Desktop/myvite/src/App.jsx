@@ -1,31 +1,17 @@
-import React from 'react';
-import HeroSection from './selling/HeroSection';
-import Navbar from './selling/Navbar';
-import Topbar from './selling/Topbar';
-import ProductGrid from './selling/ProductGrid';
-import InputSection from './selling/InputSection'
-import FeaturedProduct from './selling/FeaturedProduct'
-import  AboutUS from './selling/AboutUs'
-import Team from './selling/Team'
-import SummerSale from './selling/SummerSale'
-import ServicesSection from './selling/ServicesSection'
-import TestimonialSection from './selling/TestimonialSection'
-function App() {
+import React from "react";
+import { BrowserRouter } from "react-router";
+import Router from "./router/Router";
+import Navbar from "./taskr/navbar/Navbar"; 
+
+
+const App = () => {
   return (
-    <div>
-<Topbar/>
-<Navbar/>
-<HeroSection/>
-<ProductGrid/>
-<InputSection/>
-<FeaturedProduct/>
-<AboutUS/>
-<Team/>
-<SummerSale/>
-<ServicesSection/>
-<TestimonialSection/>
-    </div>
+    <BrowserRouter>
+      <Router />
+      <Navbar />
+
+    </BrowserRouter>
   );
-}
+};
 
 export default App;

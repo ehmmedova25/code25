@@ -1,3 +1,88 @@
+mport React from 'react';
+import styles from './Categories.module.css';
+import img1 from '../../assets/cat1.jpg';
+import img2 from '../../assets/cat2.jpg';
+import img3 from '../../assets/cat3.jpg';
+import img4 from '../../assets/cat4.jpg';
+import img5 from '../../assets/cat5.jpg';
+
+const Categories = () => {
+  return (
+    <section className={styles.categories}>
+      <h2>Shop for Different Categories</h2>
+      <p>Who are in extremely love with eco friendly system.</p>
+      <div className={styles.grid}>
+        <img src={img1} alt="category 1" />
+        <img src={img2} alt="category 2" />
+        <img src={img3} alt="category 3" />
+        <div className={styles.hotDeals}>
+          <h3>HOT DEALS OF THIS MONTH</h3>
+          <button>SHOP NOW</button>
+        </div>
+        <img src={img4} alt="category 4" />
+        <img src={img5} alt="category 5" />
+      </div>
+    </section>
+  );
+};
+
+export default Categories;
+
+.categories {
+  text-align: center;
+  padding: 60px 40px;
+  background-color: #fafafa;
+}
+
+.categories h2 {
+  font-size: 28px;
+  font-weight: 700;
+  color: #2c2c2c;
+}
+
+.categories p {
+  color: #777;
+  margin-bottom: 40px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: auto auto;
+  gap: 20px;
+}
+
+.grid img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.hotDeals {
+  grid-column: span 2;
+  background-color: #ececec;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 40px;
+  text-align: left;
+}
+
+.hotDeals h3 {
+  font-size: 22px;
+  margin-bottom: 20px;
+  color: #2c2c2c;
+}
+
+.hotDeals button {
+  padding: 10px 20px;
+  background-color: black;
+  color: white;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+}
 import React from 'react';
 import styles from './Banner.module.css';
 import bannerImg from '../../assets/banner-image.jpg'; // görseli "assets" klasörüne koyduğunu varsayıyorum

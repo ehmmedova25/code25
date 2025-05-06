@@ -1,4 +1,64 @@
+import React from 'react';
+import styles from './Banner.module.css';
+import bannerImg from '../../assets/banner-image.jpg'; // görseli "assets" klasörüne koyduğunu varsayıyorum
 
+const Banner = () => {
+  return (
+    <div className={styles.banner}>
+      <div className={styles.text}>
+        <p className={styles.discount}>Flat <span>75% Off</span></p>
+        <h1>IT’S HAPPENING<br />THIS SEASON!</h1>
+        <button>PURCHASE NOW</button>
+      </div>
+      <div className={styles.image}>
+        <img src={bannerImg} alt="banner" />
+      </div>
+    </div>
+  );
+};
+
+export default Banner; .banner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(90deg, #ef3e36, #f857a6);
+  color: white;
+  padding: 60px 40px;
+}
+
+.text {
+  max-width: 50%;
+}
+
+.discount {
+  font-size: 20px;
+}
+
+.discount span {
+  font-weight: bold;
+  font-size: 30px;
+}
+
+h1 {
+  font-size: 48px;
+  font-weight: 800;
+  margin: 20px 0;
+}
+
+button {
+  background: white;
+  color: black;
+  padding: 12px 24px;
+  font-weight: bold;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+}
+
+.image img {
+  width: 400px;
+  border-radius: 10px;
+}
 import React from 'react';
 import styles from './Navbar.module.css';
 

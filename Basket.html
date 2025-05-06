@@ -1,4 +1,83 @@
-mport React from 'react';
+import React from 'react';
+import styles from './ProductsMen.module.css';
+import img1 from '../../assets/men1.jpg';
+import img2 from '../../assets/men2.jpg';
+import img3 from '../../assets/men3.jpg';
+import img4 from '../../assets/men4.jpg';
+
+const ProductsMen = () => {
+  const products = [
+    { id: 1, img: img1, title: 'Long Sleeve shirt', price: '$150.00' },
+    { id: 2, img: img2, title: 'Long Sleeve shirt', price: '$150.00' },
+    { id: 3, img: img3, title: 'Long Sleeve shirt', price: '$150.00' },
+    { id: 4, img: img4, title: 'Long Sleeve shirt', price: '$150.00' },
+  ];
+
+  return (
+    <section className={styles.products}>
+      <h2>New realeased Products for Men</h2>
+      <p>Who are in extremely love with eco friendly system.</p>
+      <div className={styles.productGrid}>
+        {products.map((product) => (
+          <div key={product.id} className={styles.card}>
+            <img src={product.img} alt={product.title} />
+            <h4>{product.title}</h4>
+            <p>{product.price}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+  );
+};
+
+export default ProductsMen; .products {
+  background: linear-gradient(to right, #f43f5e, #ec4899);
+  padding: 60px 40px;
+  text-align: center;
+  color: white;
+}
+
+.products h2 {
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+.products p {
+  margin-bottom: 40px;
+  opacity: 0.9;
+}
+
+.productGrid {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.card {
+  background: white;
+  color: black;
+  padding: 20px;
+  border-radius: 10px;
+  width: 200px;
+  text-align: center;
+}
+
+.card img {
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+}
+
+.card h4 {
+  margin: 15px 0 5px;
+  font-size: 16px;
+}
+
+.card p {
+  font-weight: bold;
+  color: #f43f5e;
+}mport React from 'react';
 import styles from './Categories.module.css';
 import img1 from '../../assets/cat1.jpg';
 import img2 from '../../assets/cat2.jpg';
